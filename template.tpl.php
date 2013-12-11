@@ -15,7 +15,7 @@
     </head>
     <body>
         <div id="wrap">
-            <div id="header">
+            <div id="header"> 
                 <h1><?php echo $template->get("title"); ?></h1>
             </div>
             <?php echo $template->menu(); ?>
