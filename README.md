@@ -20,7 +20,7 @@ Changelog
 -tinymce library added
 -Welcome message in documentation added
 
-﻿[2013/29/11] V1.3
+ï»¿[2013/29/11] V1.3
 -Directory structure changes, 
   -lib > bin
     -img_bin > images
@@ -43,6 +43,42 @@ Changelog
 
 [2013/1/11] V1.2
 -DB connection is now through index.php
+-added new database classes
+-removed old database class
+-Created new default folder for ajax files
+-Bug fixes in templae.class.php
+
+[2013/31/10] V1.1.3
+-Page files now requires the extension .tpl.php
+-new methods "numRows()" and "lastId()" in database.clas.php
+
+[2013/30/10] V1.1.2
+-Created empty class â€˜render.class-phpâ€™
+-deleted file server/dbconnect.php use dbclasss instead
+
+[2013/28/10] V1.1.1
+-"isValidImage()" and "validExt()" revamped in upload.class.php
+-"handleUpload()" now replaces chosen characters in filename
+-Re-arranged structure in "handleUpload()" method
+
+[2013/27/09] V1.1
+-Renamed rand_str() method to randStr() in upload.class.php
+-Upload class now returns object instead of array without underscores
+-Upload class no longer generates a random string only for new filenames. (original + randStr)
+-New public method "crop()" in upload class
+-New private method "maxServerUploadSize()" in upload.class.php to get servers upload size without triggering errors
+-Method "ext()" was removed to lessen the number of function calls in upload.class.php
+-Method "isValidImage()" revamped
+
+[2013/24/09] V1.0.1
+-Changelog file added
+-Documentation file added and attached
+-Added a security measure to prevent direct acces to template file
+
+[2013/11/09] V1.0
+-New method "add()"
+-stylesheet() method updated to accept full destination
+-javascript() method updated to accept full destination
 -added new database classes
 -removed old database class
 -Created new default folder for ajax files
