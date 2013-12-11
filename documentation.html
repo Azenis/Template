@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rehhoff template documentation</title>
+        <style type="text/css">
+            div {
+                font-family:tahoma;
+                margin:0 0 5px 0;
+                padding:5px;
+                background:#ECECEC;
+                border:2px solid #CCC;
+            }
+            span.accept, span.error, span.note, span.return {
+                width:80px;
+                float:left;
+            }
+            span.accept {
+                color:green;
+            }
+            span.error {
+                color:red;
+            }
+            span.return {
+                color:rgb(0,122,255);
+            }
+            span.note {
+                color:orangered;
+            }
+            pre {
+                color:firebrick;
+                font-family:verdana;
+            }
+            .jumpMenu li a{
+                font-family:arial;
+                color:rgb(0,122,255);
+                text-decoration:none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Rehhoff template documentation</h1>
+        <ol class="jumpMenu">
+            <li><a href="#configuration">Configuration</a></li>
+            <li><a href="#database">Database</a></li>
+            <li><a href="#structure">Structure</a></li>
+            <li><a href="#messages">System messages</a></li>
+            <li><a href="#libraries">Libraries</a></li>
+            <li><a href="#methods">Object methods</a></li>
+        </ol>
+        <h2 id="configuration">Configuration</h2>
+        <div>
+            If you want to control the error handling and reporting on the website you must do it in the <strong>server/config.php</strong> file<br />
+            The following is the default settings<br />
+            <pre>
+		//prevent caching
+		header('Cache-Control: no-cache, no-store, must-revalidate'); // HTTP 1.1.
+		header('Pragma: no-cache'); // HTTP 1.0.
+		header('Expires: 0'); // Proxies.
+		//server side configuration
+		ini_set("display_errors", "1");
+		ini_set("display_startup_errors ", "1");
+		error_reporting(E_ALL);
+		session_start();
+            </pre>
+        </div>
+        <hr />
+        <h2>Database</h2>
+        <div>
+            This application uses the simpleDB(); class for database handling.<br>
+            Connection goes through the <strong>index.php</strong> file and is as follows:
+            <pre>
+                    $db = new SimpleDB(SimpleDB::MYSQL, 'localhost', 'username', 'password', 'databasename');
+            </pre>
+            See <strong>template/SimpleDB.class.php</strong>
+        </div>
+        <hr />
+
+        <h2 id="structure">Structure</h2>
+        <div>
+            To start of you are granted the <strong>$template</strong> variable, this will contain all methods and properties of the <strong>template.class.php</strong> use it to make your code more readable. later referenced to as 'the object'<br><br>
+            
+            The system works by first constructing the stylesheet and javascript links to be placed in the DOM, using the methods in the <strong>->javascript</strong> and <strong>->stylesheet()</strong><strong>template.class.php</strong> file<br />
+            It then finds a <strong>controller</strong> file this file is the where you extract from databases, create variables to be used later on, if such controller file is found. PHP will execute it.<br />
+            Now after that, it will require the template file this file contains the ovarall structure of the website, such as menu, footer and a content box.<br /><br>
+            This template file WILL require a <strong>view</strong> file must be the same name as the controller file. the view file contains the HTML for page specific content variables created in the according controller file should be used here.<br><br />
+            If you do not have the view file a 404 page will be issued
+            <br />
+            A <strong>controller</strong> is being executed BEFORE any HTML is output.<br />
+            a <strong>view</strong> file is being exevuted AFTER HTML output.<br />
+            <pre>
+		$this->allowed["page-name"] = "default page title";
+		$this->allowed["new-page"] = "Another page title";
+            </pre>
+            The main menu (assuming you have one) is to be constructed in the <strong>menu()</strong> method of <strong>template.class.php</strong> as follows:
+            <pre>
+		$menu["href"] = "value";
+            </pre>
+            A <strong>controller</strong> file must be named after the page being visited, E.G if the page is contact the <strong>controller</strong> file must be named contact.php<br />
+            <strong>View</strong> files have the sub-extension .tpl to distinguish between controller filers and view files.. for example: contact.tpl.php
+            <br>
+            The template also has a default <strong>__autoload</strong> method implemented which means you do not need to require the class files everytime i want to use a new class.<br />
+            <br />
+            There is also an <strong>upload.class.php</strong> file attached in the system, together with some handy PHP functions in <strong>utils.class.php </strong>
+            <br />
+            Having all this stuff in one place makes it very easy for one to get a head start and code without having to worry about every little detail.<br />
+            It will take time to use the system, and it will cause you a headache or two, but when you learn to use one and know how to code OOP, life's going to be much easier for you.<br />
+            <br />
+            <em>I'd recommend once you learned to code in this template, go ahead onto a real framework like code igniter, which have way more documentation than mine will ever get.</em>
+        </div>
+        <hr />
+
+        <h2 id='messages'>System messages</h2>
+        <div>
+            As of V1.3 methods <strong>getMessage()</strong> and <strong>setMessage()</strong> have been merged.<br>
+            and you can achieve user messages (errors, notice, succes) through the <strong>->message($message, $type)</strong> method.<br>
+            <strong>$type</strong> is flexible and does not need to be of a specific type. Defaults to 'notice'<br><br>
+            If this method does not recieve any parameters it will return a string containing all messages previously set in the application <strong>$type</strong> will be the class of the tag returned
+        </div>
+        <hr>
+        <h2 id="libraries">Libraries</h2>
+        <div>
+            The template comes with a variety of third party libraries already. simply use the <strong>-add($library)</strong> method and the application will automatically append the neccessary javascript and CSS to the DOM<br>
+            You can add third party libraries yourself, and then use the <strong>->stylesheet()</strong> and <strong>->javascript()</strong> to add the neccessary scripts
+
+            <br />
+
+            <span class="accept">Accepts</span><br />
+            <ul>
+                <li>lightbox
+                <li>colorbox
+                <li>jqueryui
+            </ul>
+            <span class="return">Returns</span>
+            Bolean<br />
+            <span class="error">Error</span>
+            Will throw exception if not a valid argument
+            </div>
+        <hr>
+        <h2 id="methods">Object Methods</h2>
+        This section will briefly cover the methods you can take advantage of in your controller files<br />
+        For more check out the <strong>utils.class.php</strong> file.<br />
+        <br />
+
+        <div>
+            <strong>javascript($jscript)</strong> <br />
+            Add destination files javascript to the DOM<br />
+            <span class="accept">Accepts</span><br />
+            <ul>
+                <li>array containing the destinations for .js files</li>
+            </ul>
+            <span class="return">Returns</span><em>NONE</em><br />
+            <span class="error">Error</span><em>NONE</em><br />
+            <span class="note">Notice</span>file must contain javascript
+        </div>
+
+        <div>
+            <strong>stylesheet($styles)</strong> <br />
+            Add destination files stylesheet to the DOM<br />
+            <span class="accept">Accepts</span><br />
+            <ul>
+                <li>array containing the destinations for .css files</li>
+            </ul>
+            <span class="return">Returns</span><em>NONE</em><br />
+            <span class="error">Error</span><em>NONE</em><br />
+            <span class="note">Notice</span>File must contain a valid type of css
+        </div>
+        <div>
+            <strong>set($property, $value)</strong><br />
+            Set a value for the specfied property in the object<br />
+            <span class="accept">Accepts</span><br />
+            <ul>
+                <li>$property - the property name to set value for
+                <li>$value - The value to be set on the property
+            </ul>
+            <span class="return">Returns</span><em>NONE</em><br />
+            <span class="error">Error</span><em>NONE</em>
+        </div>
+        <div>
+            <strong>get($property)</strong><br />
+            Gets the value for the specfied property in the object<br />
+            <span class="accept">Accepts</span><br />
+            <ul>
+                <li>$property - the property of which the value is wanted
+            </ul>
+            <span class="return">Returns</span>A value from the objects property<br />
+            <span class="error">Error</span><em>NONE</em>
+        </div>
+    </body>
+</html>

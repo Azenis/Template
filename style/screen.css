@@ -1,0 +1,99 @@
+* {
+    margin:o;
+    padding:0;
+}
+body {
+    font-family:tahoma;
+}
+/* messages */
+.info, .success, .attention, .error {
+    padding: 10px 10px 10px 40px;
+    font:13px arial;
+    margin:0 0 5px 0;
+}
+
+.info {
+    background: #BDE5F8 url('../bin/images/style/messages/information.png') 10px 50% no-repeat;
+    border: 1px solid #00529B;
+}
+.success {
+	background: #DFF2BF url('../bin/images/style/messages/success.png') 10px 50% no-repeat;
+    border:1px solid #4F8A10;
+}
+.attention {
+	background: #FEEFB3 url('../bin/images/style/messages/attention.png') 10px 50% no-repeat;
+    border:1px solid #9F6000;
+}
+.error {	
+	background: #FFBABA url('../bin/images/style/messages/error.png') 10px 50% no-repeat;
+    border:1px solid #D8000C;
+}
+/* You can remove everything below this line :); */
+#wrap {
+    margin:0 auto;
+    width:800px;
+    min-height:200px;
+}
+#header {
+    border-bottom:1px solid #AAAEEE;
+}
+#menu {
+    float:left;
+    border-right:1px solid #AAAEEE;
+    width:150px;
+}
+#menu {
+    margin:0;
+}
+#menu li {
+    list-style-type:none;
+    border-bottom:1px solid #AAAEEE;
+    padding:5px 0;
+}
+#menu li:first-child {
+}
+#menu li a {
+    color:grey;
+    display:block;
+    text-decoration:none;
+}
+#menu li.current a {
+    color:black;
+    display:block;
+    text-decoration:none;
+}
+#content {
+    width:635px;
+    padding:5px;
+    float:left;
+}
+#content li {
+    margin-left:20px;
+}
+.methods div {
+    font-family:tahoma;
+    margin:0 0 5px 0;
+    padding:5px;
+    background:#ECECEC;
+    border:2px solid #CCC;
+}
+span.accept, span.fail, span.note, span.return {
+    width:80px;
+    float:left;
+}
+span.accept {
+    color:green;
+}
+span.fail {
+    color:red;
+}
+span.return {
+    color:rgb(0,122,255);
+}
+span.note {
+    color:orangered;
+}
+pre {
+    color:firebrick;
+    font-family:verdana;
+}

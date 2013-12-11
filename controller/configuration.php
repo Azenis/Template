@@ -1,0 +1,1 @@
+<?php $template->message("This system needs minimal configuration", "attention"); ?>

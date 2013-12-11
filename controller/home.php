@@ -1,0 +1,1 @@
+<?php $template->message("Congratulations! you're now using a template system", "success"); ?>
