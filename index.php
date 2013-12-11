@@ -6,7 +6,7 @@
     $page = isset($_GET["page"]) ? $_GET["page"] : "home";
     
     $template = new template();
-    $template->db("localhost", "username", "password", "database");
+    //$template->db("localhost", "username", "password", "database");
     $template->set("page", $page);
     $template->display();
 ?>
