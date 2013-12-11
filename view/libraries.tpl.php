@@ -14,7 +14,7 @@ You can add third party libraries yourself, and then use the <strong>->styleshee
         </ul>
         <span class="return">Returns</span>
         Bolean<br />
-        <span class="error">Error</span>
+        <span class="fail">Error</span>
         Will throw exception if not a valid argument
     </div>
 </div>

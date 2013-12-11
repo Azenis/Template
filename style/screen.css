@@ -31,7 +31,7 @@ body {
 /* You can remove everything below this line :); */
 #wrap {
     margin:0 auto;
-    width:800px;
+    width:1000px;
     min-height:200px;
 }
 #header {
@@ -39,7 +39,6 @@ body {
 }
 #menu {
     float:left;
-    border-right:1px solid #AAAEEE;
     width:150px;
 }
 #menu {
@@ -63,7 +62,8 @@ body {
     text-decoration:none;
 }
 #content {
-    width:635px;
+    border-left:1px solid #AAAEEE;
+    width:835px;
     padding:5px;
     float:left;
 }

@@ -12,3 +12,7 @@ The following is the default settings<br />
     error_reporting(E_ALL);
     session_start();
 </pre>
+Database connection goes through the <strong>index.php</strong> file and is as follows:
+<pre>
+    $template->db("localhost", "username", "password", "database");
+</pre>

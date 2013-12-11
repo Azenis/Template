@@ -4,7 +4,7 @@
     <br />
 
     <div>
-        <strong>javascript($jscript)</strong> <br />
+        <strong>->javascript($jscript)</strong> <br />
         Add destination files javascript to the DOM<br />
         <span class="accept">Accepts</span><br />
         <ul>
@@ -16,7 +16,7 @@
     </div>
 
     <div>
-        <strong>stylesheet($styles)</strong> <br />
+        <strong>->stylesheet($styles)</strong> <br />
         Add destination files stylesheet to the DOM<br />
         <span class="accept">Accepts</span><br />
         <ul>
@@ -27,7 +27,17 @@
         <span class="note">Notice</span>File must contain a valid type of css
     </div>
     <div>
-        <strong>set($property, $value)</strong><br />
+        <strong>->add($library)</strong> <br />
+        Attempts to autoload a class when instantiated<br />
+        <span class="accept">Accepts</span><br />
+        <ul>
+            <li>Name of library to be added into the DOM</li>
+        </ul>
+        <span class="return">Returns</span>Boolean<br />
+        <span class="fail">Error</span>Triggers error if unknown library<br />
+    </div>
+    <div>
+        <strong>->set($property, $value)</strong><br />
         Set a value for the specfied property in the object<br />
         <span class="accept">Accepts</span><br />
         <ul>
@@ -38,7 +48,7 @@
         <span class="fail">Error</span><em>NONE</em>
     </div>
     <div>
-        <strong>get($property)</strong><br />
+        <strong>->get($property)</strong><br />
         Gets the value for the specfied property in the object<br />
         <span class="accept">Accepts</span><br />
         <ul>

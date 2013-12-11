@@ -4,6 +4,7 @@
 -Added function hook_menu()
 -Added function hook_pages()
 -Documentation updated
+-Added new method ->db() in template.class.php
 
 [2013/10/12] V1.3.2
 -Added 4 different types of system messages.
