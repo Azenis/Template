@@ -9,9 +9,9 @@
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <?php echo $this->get("stylesheets"); ?>
-        <?php echo $this->get("jscripts"); ?>
-        <title><?php echo $this->get("title"); ?></title>
+        <?php echo $stylesheets; ?>
+        <?php echo $javascript; ?>
+        <title><?php echo $title; ?></title>
     </head>
     <body>
         <div id="wrap">
@@ -20,7 +20,7 @@
             </div>
             <?php echo $template->menu(); ?>
             <div id="content">
-                <?php require("view/{$template->get("page")}.tpl.php"); ?>
+                <?php require("catalog/view/{$template->get("page")}.tpl.php"); ?>
             </div>
         </div>
     </body>

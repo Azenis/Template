@@ -1,4 +1,3 @@
-The <strong>$template</strong> variable, will contain all methods and properties of the <strong>template.class.php</strong> use it to make your code more readable. later referenced to as 'the object'<br><br>
 
 The following steps is how the object processes a request<br><br>
 1)<br>

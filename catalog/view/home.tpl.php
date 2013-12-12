@@ -1,7 +1,7 @@
 <?php echo $template->message(); ?>
 <br>
-You're all set and ready to start coding your application<br>
-However if you are first time user it's recommended that you read this documentation first<br>
+Welcome and thank you for considering my template system :)<br>
+If you are first time user it's recommended that you read this documentation first<br>
 <br>
 Having all this stuff in one place makes it very easy for one to get a head start and code without having to worry about every little detail.<br />
 It will take time to use the system, and it will cause you a headache or two, but when you learn to use one and know how to code OOP, life's going to be much easier for you.<br />

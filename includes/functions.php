@@ -43,12 +43,20 @@ function hook_menu() {
     $menu = array();
     $menu["home"] = "Welcome";
     $menu["configuration"] = "Configuration";
+    $menu["local-variables"] = "Local variables";
     $menu["structure"] = "Structure";
     $menu["system-messages"] = "System messages";
     $menu["libraries"] = "Libraries";
     $menu["functions"] = "Functions";
     $menu["object-methods"] = "Object methods";
+    $menu["todo"] = "Todo list";
+    $menu["download"] = "<span style='color:orangered'>Download this</span>";
+//to be used in future releases
+    /*if(strpos($_SERVER["HTTP_HOST"], "rehhoff.me")) {
+        $menu["cleanup"] = "<span style='color:red'>Clean up</span>";
+    }*/
 
+    
     return $menu;
 }
 
@@ -62,11 +70,18 @@ function hook_pages() {
     $pages["home"] = "Rehhoff template documentation";
     $pages["404"] = "404 - page not found";
     $pages["configuration"] = "System configurations";
+    $pages["local-variables"] = "Local variables";
     $pages["structure"] = "Code structure";
     $pages["functions"] = "Predefined Functions";
     $pages["system-messages"] = "Messages from the system";
     $pages["libraries"] = "Third party libraries";
     $pages["object-methods"] = "Methods in the template object";
+    $pages["todo"] = "Todo list";
+    $pages["download"] = "Download template system";
+    //To be used in future releases
+    /*if(strpos($_SERVER["HTTP_HOST"], "rehhoff.me")) {
+        $pages["cleanup"] = "Clean up installation";
+    }*/
 
     return $pages;
 }

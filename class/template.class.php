@@ -3,19 +3,19 @@
 /**
  * @author alla2040
  */
-class template {
+class template{
 
     private $allowed, $connection;
-    private $page, $title;
-    private $stylesheets, $jscripts;
-    private $messages = array();
-
+    public $page, $title;
+    public $stylesheets, $jscripts;
+    public $messages, $data;
     /*
      * Constructer DUH
      */
 
     public function __construct() {
-
+        $this->messages = array();
+        $this->data     = array();
         //TODO: make this dynamic depending on view files
         if (function_exists("hook_pages")) {
             $this->allowed = hook_pages();
@@ -53,7 +53,7 @@ class template {
      * Method to set template based messages
      */
 
-    public function message($message = null, $type = "notice") {
+    public function message($message = null, $type = "info") {
         if ($message === null) {
             $return = "";
             foreach ($this->messages as $message) {
@@ -119,7 +119,7 @@ class template {
             }
         }
     }
-
+    
     public function db($host, $username, $password, $database) {
         try {
             $this->connection = new SimpleDB(SimpleDB::MYSQL, $host, $username, $password, $database) or die("error");
@@ -141,10 +141,10 @@ class template {
         }
 
         //set stylesheets and javascripts for the page
-        $stylesheets = array("style/screen.css", "style/{$this->get("page")}.css");
-        $jscripts = array("js/jquery.js", "js/main.js", "js/{$this->get("page")}.js");
+        $stylesheets = array("catalog/style/screen.css", "catalog/style/{$this->get("page")}.css");
+        $jscripts = array("catalog/js/jquery.js", "catalog/js/main.js", "js/{$this->get("page")}.js");
 
-        //generate the template
+        //Begin building the elements for the DOM
         $this->set("title", $this->allowed[$this->get("page")]);
         $this->stylesheet($stylesheets);
         $this->javascript($jscripts);
@@ -153,14 +153,21 @@ class template {
         if (function_exists("preprocess_page")) {
             preprocess_page();
         }
-
-        //Check if view and controller files can be found.
-        if (file_exists("controller/{$this->get("page")}.php")) {
-            require("controller/{$this->get("page")}.php");
+        
+        //Check if controller file to be executed
+        if (is_file("catalog/controller/{$this->get("page")}.php")) require("catalog/controller/{$this->get("page")}.php");
+        
+        //process data from controller file
+        $stylesheets = $this->get("stylesheets");
+        $javascript  = $this->get("jscripts");
+        $title       = $this->get("title");
+        $messages    = $this->message();
+        foreach($this->get("data") as $key => $value) {
+            $$key = $value;
         }
-        if (!file_exists("view/{$this->get("page")}.tpl.php")) {
-            $this->set("page", "404");
-        }
+        
+        //now start serving the generated DOM to the browser
+        if (!is_file("catalog/view/{$this->get("page")}.tpl.php")) $this->set("page", "404");
         require("template.tpl.php");
     }
 

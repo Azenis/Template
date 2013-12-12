@@ -13,22 +13,25 @@ body {
 }
 
 .info {
-    background: #BDE5F8 url('../bin/images/style/messages/information.png') 10px 50% no-repeat;
+    background: #BDE5F8 url('../images/style/messages/information.png') 10px 50% no-repeat;
     border: 1px solid #00529B;
 }
 .success {
-	background: #DFF2BF url('../bin/images/style/messages/success.png') 10px 50% no-repeat;
+	background: #DFF2BF url('../images/style/messages/success.png') 10px 50% no-repeat;
     border:1px solid #4F8A10;
 }
 .attention {
-	background: #FEEFB3 url('../bin/images/style/messages/attention.png') 10px 50% no-repeat;
+	background: #FEEFB3 url('../images/style/messages/attention.png') 10px 50% no-repeat;
     border:1px solid #9F6000;
 }
 .error {	
-	background: #FFBABA url('../bin/images/style/messages/error.png') 10px 50% no-repeat;
+	background: #FFBABA url('../images/style/messages/error.png') 10px 50% no-repeat;
     border:1px solid #D8000C;
 }
 /* You can remove everything below this line :); */
+a {
+    color:rgb(0,122,255);
+}
 #wrap {
     margin:0 auto;
     width:1000px;

@@ -41,7 +41,7 @@ Below is a list of default functions included, which should not be removed. Loca
         <span class="fail">Error</span><em>NONE</em><br />
     </div>
     <div>
-        <strong>hook_pages($class)</strong> <br />
+        <strong>hook_pages()</strong> <br />
         List of pages which are allowed to be shown.<br />
         <span class="accept">Accepts</span><em>NONE</em><br />
         <span class="return">Returns</span>Array<br />

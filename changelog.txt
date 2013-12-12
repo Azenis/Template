@@ -1,3 +1,10 @@
+[2013/12/12] V1.5
+-Added default variables $stylesheets, $javascript, $title
+-Added support for data variables (See documentation)
+-Updated documentaion (Again... sigh)
+-Updated folder structure
+- ->message is now defaulting to info
+
 [2013/11/13] V1.4
 -Added Shadowbox library
 -Added function preprocess_page()
