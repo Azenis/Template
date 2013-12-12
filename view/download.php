@@ -5,4 +5,4 @@ If you're familiar with GIT run this command to copy the template into your dire
     https://github.com/Azenis/Template.git
 </pre>
 <h2>Manual download</h2>
-You will have to manually upload the files to your server
+You will have to manually upload the files to your server 
