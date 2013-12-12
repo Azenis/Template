@@ -141,12 +141,12 @@ class template{
         }
 
         //set stylesheets and javascripts for the page
-        $stylesheets = array("catalog/style/screen.css", "catalog/style/{$this->get("page")}.css");
-        $jscripts = array("catalog/js/jquery.js", "catalog/js/main.js", "js/{$this->get("page")}.js");
+        $styles = array("catalog/view/style/screen.css", "catalog/view/style/{$this->get("page")}.css");
+        $jscripts = array("catalog/view/js/jquery.js", "catalog/view/js/main.js", "catalog/view/js/{$this->get("page")}.js");
 
         //Begin building the elements for the DOM
         $this->set("title", $this->allowed[$this->get("page")]);
-        $this->stylesheet($stylesheets);
+        $this->stylesheet($styles);
         $this->javascript($jscripts);
 
         //before we even head on the start constructing the page we check if any preprocessing needs doing

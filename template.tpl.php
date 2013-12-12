@@ -1,6 +1,5 @@
 <?php
 !defined("APPLICATION_RUNNING") ? die("direct acces error") : "";
-;
 ?>
 <!DOCTYPE html>
 <html>
