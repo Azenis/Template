@@ -1,3 +1,8 @@
+THIS PROJECT IS NO LONGER SUPPORTED.
+YOU SHOULD USE THE VERSION 2 INSTEAD,
+TRUST ME IT'S MUCH MORE AWESOME, 
+AND MORE FEATURES WILL COME IN THE FUTURE
+----------------------------------------------
 Allan Rehhoff PHP Template System
 ===
 Just upload the files to your server and you're ready to go :)
